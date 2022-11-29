@@ -9,6 +9,19 @@ public class Main {
 
   static CountsByUsage countBatteriesByUsage(int[] cycles) {
     CountsByUsage counts = new CountsByUsage();
+    
+        //Solution Starts
+        for (int i : cycles)
+        {
+            if ( i > Integer.MIN_VALUE && i  < 410) //Battries less than 410
+                counts.lowCount++;
+            else if (i >= 410 && i <= 949) //Battries in range of 410 to 949
+                counts.mediumCount++;
+            else if ( i > 949 && i < Integer.MAX_VALUE)// Rest of the Battries that is more than 949
+                counts.highCount++;
+        }
+        //Solution Ends Here.
+    
     return counts;
   }
 
